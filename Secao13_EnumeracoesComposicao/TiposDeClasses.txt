@@ -1,0 +1,9 @@
+Existem pelo menos 5 tipos de classes para facilitar o Design de um sistema:
+Entities -> Modelo de um negócio (A entidade do Modelo Entidade Relacionamento de DB)
+	Ex: Order, OrderItem, Product, Client, OrderStatus...
+Controllers -> Meio de campo entre Telas e Sistema
+Views -> Telas
+Services -> Ações do Sistema: CRUD Repository, OrderEmail, EmailService, AuthService...
+Repositories -> Acessam os dados de um DB
+
+
