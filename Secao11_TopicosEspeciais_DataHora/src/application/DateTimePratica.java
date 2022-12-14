@@ -1,10 +1,12 @@
 package application;
 
+import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class DateTimePratica {
 
@@ -108,6 +110,47 @@ public class DateTimePratica {
 		System.out.println();
 		System.out.println("Somente 'hora': "+d05.getHour());
 		System.out.println("Somente 'minuto': "+ d05.getMinute());
+		
+		System.out.println("---------------------------");
+		System.out.println("Calculos com DataHora: ");
+		System.out.println("Obs: Objetos DataHora sao estaticos, nao se alteram!");
+		System.out.println("Resultados da operacao geram novo objeto DataHora. ");
+		System.out.println();
+		
+		// LocalDate d04 = LocalDate.parse("2022-12-25");
+		// LocalDateTime d05 = LocalDateTime.parse("2022-12-26T23:30:45");
+		// Instant d06 = Instant.parse("2022-12-27T01:40:20Z");
+		
+		LocalDate pastWeekLocalDate = d04.minusDays(7);
+		System.out.println("Subtraindo uma semana da Data:" + pastWeekLocalDate);	
+		LocalDate nextWeekLocalDate = d04.plusDays(7);
+		System.out.println("Somando uma semana da Data:" + nextWeekLocalDate);
+		
+		LocalDateTime pastWeekLocalDateTime = d05.minusDays(7);
+		System.out.println("Subtraindo uma semana de DataHora:" + pastWeekLocalDateTime);	
+		LocalDateTime nextWeekLocalDateTime = d05.plusDays(7);
+		System.out.println("Somando uma semana de DataHora:" + nextWeekLocalDateTime);
+		
+		Instant pastWeekInstant = d06.minus(7, ChronoUnit.DAYS);
+		System.out.println("Subtraindo uma semana de Instant:" + pastWeekInstant);	
+		Instant nextWeekInstant = d06.plus(7, ChronoUnit.DAYS);
+		System.out.println("Somando uma semana de Instant:" + nextWeekInstant);
+				
+		Duration diferencaLocalDateTime = Duration.between(pastWeekLocalDateTime, d05);
+		System.out.println("Diferenca de Dias em LocalDateTIME (NAO FUNFA PRA LocalDate. Precisa converter para LocalDateTime): "
+				+ diferencaLocalDateTime.toDays());
+		Duration diferencaLocalDate = Duration.between(pastWeekLocalDate.atTime(0, 0), d04.atTime(0, 0));
+		System.out.println("Diferenca de Dias em LocalDate (convertido para LocalDateTime com atTime(0, 0)): "
+				+ diferencaLocalDate.toDays());
+		diferencaLocalDate = Duration.between(pastWeekLocalDate.atStartOfDay(), d04.atStartOfDay());
+		System.out.println("Diferenca de Dias em LocalDate (usando atStartOfDay() ao inves de atTime(0, 0)): "
+				+ diferencaLocalDate.toDays());
+		
+		Duration diferencaInstant = Duration.between(pastWeekInstant, d06);
+		System.out.println("Diferenca de Dias em Instant: " + diferencaInstant.toDays());
+		
+		diferencaInstant = Duration.between(d06, pastWeekInstant);
+		System.out.println("Diferenca de Dias em Instant (invertendo operadores) : " + diferencaInstant.toDays());
 	}
 
 }
