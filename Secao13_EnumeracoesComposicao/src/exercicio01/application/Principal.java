@@ -26,10 +26,10 @@ public class Principal {
 		System.out.print("Name: ");
 		String workerName = sc.nextLine();
 		
-		System.out.println("Level: ");
+		System.out.print("Level: ");
 		String workerLevel = sc.nextLine();
 		
-		System.out.println("Base salary: ");
+		System.out.print("Base salary: ");
 		double baseSalary = sc.nextDouble();
 		
 		Worker worker = new Worker(workerName
@@ -49,7 +49,7 @@ public class Principal {
 			System.out.print("Value per hour: ");
 			double valuePerHour = sc.nextDouble();
 			
-			System.out.println("Duration (hours): ");
+			System.out.print("Duration (hours): ");
 			int hours = sc.nextInt();
 			
 			HourContract contract = new HourContract(contractDate, valuePerHour, hours);
@@ -57,7 +57,7 @@ public class Principal {
 		}
 		
 		System.out.println();
-		System.out.println("Enter month and year to calculate income (MM/YYYY): ");
+		System.out.print("Enter month and year to calculate income (MM/YYYY): ");
 		String monthAndYear = sc.next();
 		int month = Integer.parseInt(monthAndYear.substring(0, 2));
 		int year = Integer.parseInt(monthAndYear.substring(3));
@@ -65,7 +65,6 @@ public class Principal {
 		System.out.println("Name: " + worker.getName());
 		System.out.println("Department: " + worker.getDepartment().getName());
 		System.out.println("Income for " + monthAndYear + ": "+ String.format("%.2f", worker.income(year, month)));
-		
 		
 		sc.close();
 	}

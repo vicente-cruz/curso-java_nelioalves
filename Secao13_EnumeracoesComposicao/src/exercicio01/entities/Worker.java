@@ -84,6 +84,6 @@ public class Worker {
 			}
 		}
 		
-		return 0;
+		return sum;
 	}
 }
