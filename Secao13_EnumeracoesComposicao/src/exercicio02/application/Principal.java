@@ -9,6 +9,7 @@ import exercicio02.entities.Post;
 public class Principal {
 
 	public static void main(String[] args) throws ParseException {
+		// StringBuilder usado no metodo toString da classe Post.
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		
