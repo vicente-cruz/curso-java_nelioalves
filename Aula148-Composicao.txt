@@ -1,5 +1,0 @@
-Composição:
-	Faz com que um objeto possua outros
-	Semelhante ao "cada objeto x contém 1..n objetos y"
-
-	Bola preta: o "todo do objeto x contém partes do objeto y"
