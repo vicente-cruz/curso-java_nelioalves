@@ -1,13 +1,13 @@
 package exercicio03.entities;
 
-public class Item {
+public class Product {
 	
 	private String name;
 	private Double price;
 	
-	public Item() {}
+	public Product() {}
 
-	public Item(String name, Double price) {
+	public Product(String name, Double price) {
 		this.name = name;
 		this.price = price;
 	}
