@@ -1,5 +1,6 @@
 package aulaHeranca_entities;
 
+// "final": evita criação de subclasses de SavingsAccounts
 public class SavingsAccount extends Account {
 
 	private Double interestRate;
@@ -23,6 +24,12 @@ public class SavingsAccount extends Account {
 	
 	public void updateBalance() {
 		balance += balance * interestRate;
+	}
+	
+	// "final": evita sobrescritas futuras de withdraw
+	@Override
+	public final void withdraw(double amount) {
+		balance -= amount;
 	}
 	
 }

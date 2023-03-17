@@ -4,7 +4,7 @@ import aulaHeranca_entities.Account;
 import aulaHeranca_entities.BusinessAccount;
 import aulaHeranca_entities.SavingsAccount;
 
-public class Program {
+public class Program_UpcastDownCast {
 
 	public static void main(String[] args) {
 

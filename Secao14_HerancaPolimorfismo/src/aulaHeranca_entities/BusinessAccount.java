@@ -27,4 +27,11 @@ public class BusinessAccount extends Account {
 			balance += amount;
 		}
 	}
+	
+	@Override
+	public void withdraw(double amount) {
+		// Chama withdraw do pai
+		super.withdraw(amount);
+		balance -= 2.0;
+	}
 }
